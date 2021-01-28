@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D1EC0A6525C2EA4F00402D76 /* KidsScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC0A6425C2EA4F00402D76 /* KidsScheduleApp.swift */; };
+		D1EC0A6725C2EA4F00402D76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC0A6625C2EA4F00402D76 /* ContentView.swift */; };
+		D1EC0A6925C2EA5600402D76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1EC0A6825C2EA5600402D76 /* Assets.xcassets */; };
+		D1EC0A6C25C2EA5600402D76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1EC0A6B25C2EA5600402D76 /* Preview Assets.xcassets */; };
+		D1EC0A7725C2EA5600402D76 /* KidsScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC0A7625C2EA5600402D76 /* KidsScheduleTests.swift */; };
+		D1EC0A8225C2EA5600402D76 /* KidsScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC0A8125C2EA5600402D76 /* KidsScheduleUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D1EC0A7325C2EA5600402D76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D1EC0A5925C2EA4F00402D76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1EC0A6025C2EA4F00402D76;
+			remoteInfo = KidsSchedule;
+		};
+		D1EC0A7E25C2EA5600402D76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D1EC0A5925C2EA4F00402D76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1EC0A6025C2EA4F00402D76;
+			remoteInfo = KidsSchedule;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D1EC0A6125C2EA4F00402D76 /* KidsSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1EC0A6425C2EA4F00402D76 /* KidsScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsScheduleApp.swift; sourceTree = "<group>"; };
+		D1EC0A6625C2EA4F00402D76 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D1EC0A6825C2EA5600402D76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D1EC0A6B25C2EA5600402D76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D1EC0A6D25C2EA5600402D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1EC0A7225C2EA5600402D76 /* KidsScheduleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KidsScheduleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1EC0A7625C2EA5600402D76 /* KidsScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsScheduleTests.swift; sourceTree = "<group>"; };
+		D1EC0A7825C2EA5600402D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1EC0A7D25C2EA5600402D76 /* KidsScheduleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KidsScheduleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1EC0A8125C2EA5600402D76 /* KidsScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsScheduleUITests.swift; sourceTree = "<group>"; };
+		D1EC0A8325C2EA5600402D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D1EC0A5E25C2EA4F00402D76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1EC0A6F25C2EA5600402D76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1EC0A7A25C2EA5600402D76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D1EC0A5825C2EA4F00402D76 = {
+			isa = PBXGroup;
+			children = (
+				D1EC0A6325C2EA4F00402D76 /* KidsSchedule */,
+				D1EC0A7525C2EA5600402D76 /* KidsScheduleTests */,
+				D1EC0A8025C2EA5600402D76 /* KidsScheduleUITests */,
+				D1EC0A6225C2EA4F00402D76 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D1EC0A6225C2EA4F00402D76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D1EC0A6125C2EA4F00402D76 /* KidsSchedule.app */,
+				D1EC0A7225C2EA5600402D76 /* KidsScheduleTests.xctest */,
+				D1EC0A7D25C2EA5600402D76 /* KidsScheduleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D1EC0A6325C2EA4F00402D76 /* KidsSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				D1EC0A6425C2EA4F00402D76 /* KidsScheduleApp.swift */,
+				D1EC0A6625C2EA4F00402D76 /* ContentView.swift */,
+				D1EC0A6825C2EA5600402D76 /* Assets.xcassets */,
+				D1EC0A6D25C2EA5600402D76 /* Info.plist */,
+				D1EC0A6A25C2EA5600402D76 /* Preview Content */,
+			);
+			path = KidsSchedule;
+			sourceTree = "<group>";
+		};
+		D1EC0A6A25C2EA5600402D76 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D1EC0A6B25C2EA5600402D76 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D1EC0A7525C2EA5600402D76 /* KidsScheduleTests */ = {
+			isa = PBXGroup;
+			children = (
+				D1EC0A7625C2EA5600402D76 /* KidsScheduleTests.swift */,
+				D1EC0A7825C2EA5600402D76 /* Info.plist */,
+			);
+			path = KidsScheduleTests;
+			sourceTree = "<group>";
+		};
+		D1EC0A8025C2EA5600402D76 /* KidsScheduleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D1EC0A8125C2EA5600402D76 /* KidsScheduleUITests.swift */,
+				D1EC0A8325C2EA5600402D76 /* Info.plist */,
+			);
+			path = KidsScheduleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D1EC0A6025C2EA4F00402D76 /* KidsSchedule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1EC0A8625C2EA5700402D76 /* Build configuration list for PBXNativeTarget "KidsSchedule" */;
+			buildPhases = (
+				D1EC0A5D25C2EA4F00402D76 /* Sources */,
+				D1EC0A5E25C2EA4F00402D76 /* Frameworks */,
+				D1EC0A5F25C2EA4F00402D76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KidsSchedule;
+			productName = KidsSchedule;
+			productReference = D1EC0A6125C2EA4F00402D76 /* KidsSchedule.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D1EC0A7125C2EA5600402D76 /* KidsScheduleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1EC0A8925C2EA5700402D76 /* Build configuration list for PBXNativeTarget "KidsScheduleTests" */;
+			buildPhases = (
+				D1EC0A6E25C2EA5600402D76 /* Sources */,
+				D1EC0A6F25C2EA5600402D76 /* Frameworks */,
+				D1EC0A7025C2EA5600402D76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D1EC0A7425C2EA5600402D76 /* PBXTargetDependency */,
+			);
+			name = KidsScheduleTests;
+			productName = KidsScheduleTests;
+			productReference = D1EC0A7225C2EA5600402D76 /* KidsScheduleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D1EC0A7C25C2EA5600402D76 /* KidsScheduleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1EC0A8C25C2EA5700402D76 /* Build configuration list for PBXNativeTarget "KidsScheduleUITests" */;
+			buildPhases = (
+				D1EC0A7925C2EA5600402D76 /* Sources */,
+				D1EC0A7A25C2EA5600402D76 /* Frameworks */,
+				D1EC0A7B25C2EA5600402D76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D1EC0A7F25C2EA5600402D76 /* PBXTargetDependency */,
+			);
+			name = KidsScheduleUITests;
+			productName = KidsScheduleUITests;
+			productReference = D1EC0A7D25C2EA5600402D76 /* KidsScheduleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D1EC0A5925C2EA4F00402D76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					D1EC0A6025C2EA4F00402D76 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					D1EC0A7125C2EA5600402D76 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = D1EC0A6025C2EA4F00402D76;
+					};
+					D1EC0A7C25C2EA5600402D76 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = D1EC0A6025C2EA4F00402D76;
+					};
+				};
+			};
+			buildConfigurationList = D1EC0A5C25C2EA4F00402D76 /* Build configuration list for PBXProject "KidsSchedule" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D1EC0A5825C2EA4F00402D76;
+			productRefGroup = D1EC0A6225C2EA4F00402D76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D1EC0A6025C2EA4F00402D76 /* KidsSchedule */,
+				D1EC0A7125C2EA5600402D76 /* KidsScheduleTests */,
+				D1EC0A7C25C2EA5600402D76 /* KidsScheduleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D1EC0A5F25C2EA4F00402D76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1EC0A6C25C2EA5600402D76 /* Preview Assets.xcassets in Resources */,
+				D1EC0A6925C2EA5600402D76 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1EC0A7025C2EA5600402D76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1EC0A7B25C2EA5600402D76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D1EC0A5D25C2EA4F00402D76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1EC0A6725C2EA4F00402D76 /* ContentView.swift in Sources */,
+				D1EC0A6525C2EA4F00402D76 /* KidsScheduleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1EC0A6E25C2EA5600402D76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1EC0A7725C2EA5600402D76 /* KidsScheduleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1EC0A7925C2EA5600402D76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1EC0A8225C2EA5600402D76 /* KidsScheduleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D1EC0A7425C2EA5600402D76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D1EC0A6025C2EA4F00402D76 /* KidsSchedule */;
+			targetProxy = D1EC0A7325C2EA5600402D76 /* PBXContainerItemProxy */;
+		};
+		D1EC0A7F25C2EA5600402D76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D1EC0A6025C2EA4F00402D76 /* KidsSchedule */;
+			targetProxy = D1EC0A7E25C2EA5600402D76 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D1EC0A8425C2EA5600402D76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D1EC0A8525C2EA5600402D76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D1EC0A8725C2EA5700402D76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"KidsSchedule/Preview Content\"";
+				DEVELOPMENT_TEAM = V2PX7DMZ4Q;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = KidsSchedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sara.KidsSchedule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D1EC0A8825C2EA5700402D76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"KidsSchedule/Preview Content\"";
+				DEVELOPMENT_TEAM = V2PX7DMZ4Q;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = KidsSchedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sara.KidsSchedule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D1EC0A8A25C2EA5700402D76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V2PX7DMZ4Q;
+				INFOPLIST_FILE = KidsScheduleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sara.KidsScheduleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KidsSchedule.app/KidsSchedule";
+			};
+			name = Debug;
+		};
+		D1EC0A8B25C2EA5700402D76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V2PX7DMZ4Q;
+				INFOPLIST_FILE = KidsScheduleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sara.KidsScheduleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KidsSchedule.app/KidsSchedule";
+			};
+			name = Release;
+		};
+		D1EC0A8D25C2EA5700402D76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V2PX7DMZ4Q;
+				INFOPLIST_FILE = KidsScheduleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sara.KidsScheduleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KidsSchedule;
+			};
+			name = Debug;
+		};
+		D1EC0A8E25C2EA5700402D76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V2PX7DMZ4Q;
+				INFOPLIST_FILE = KidsScheduleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sara.KidsScheduleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KidsSchedule;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D1EC0A5C25C2EA4F00402D76 /* Build configuration list for PBXProject "KidsSchedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1EC0A8425C2EA5600402D76 /* Debug */,
+				D1EC0A8525C2EA5600402D76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1EC0A8625C2EA5700402D76 /* Build configuration list for PBXNativeTarget "KidsSchedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1EC0A8725C2EA5700402D76 /* Debug */,
+				D1EC0A8825C2EA5700402D76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1EC0A8925C2EA5700402D76 /* Build configuration list for PBXNativeTarget "KidsScheduleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1EC0A8A25C2EA5700402D76 /* Debug */,
+				D1EC0A8B25C2EA5700402D76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1EC0A8C25C2EA5700402D76 /* Build configuration list for PBXNativeTarget "KidsScheduleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1EC0A8D25C2EA5700402D76 /* Debug */,
+				D1EC0A8E25C2EA5700402D76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D1EC0A5925C2EA4F00402D76 /* Project object */;
+}
