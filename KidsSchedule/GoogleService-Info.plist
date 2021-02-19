@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>904516369284-jfkn5ur39qubnurodepuvdka3jju3pm4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.904516369284-jfkn5ur39qubnurodepuvdka3jju3pm4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDTbv_Js4N8MsRep8L6IgOQL1WSc7pdlg8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>904516369284</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>se.iths.au20.sarakluge.kidsSchedule</string>
+	<key>PROJECT_ID</key>
+	<string>kidsschedule-cf1eb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kidsschedule-cf1eb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:904516369284:ios:0e58e9231f6da00dd37bd1</string>
+</dict>
+</plist>
