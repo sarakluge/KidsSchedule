@@ -1,15 +1,15 @@
 //
-//  AddAndEditActivityView.swift
+//  AddAndEditActivity.swift
 //  KidsSchedule
 //
-//  Created by Sara Kluge on 2021-02-19.
+//  Created by Sara Kluge on 2021-02-23.
 //
 
 import Foundation
 import SwiftUI
 import Firebase
 
-struct AddAndEditActivityView: View {
+struct AddActivitySheet: View {
     
     var listOfDays = ["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag"]
     @State var selectedDay = "Måndag"
@@ -17,6 +17,8 @@ struct AddAndEditActivityView: View {
     @State var time = ""
     @State var location = ""
     var db = Firestore.firestore()
+    @Environment(\.presentationMode) var presentationMode
+    @State var currentSchedule: Schedule
     
     var body: some View {
         NavigationView{
@@ -43,10 +45,16 @@ struct AddAndEditActivityView: View {
                     TextField("Plats", text: $location)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
-                Button(action: {addActivityToFirestore(selectedDay: selectedDay, title: title, time: time, location: location)}) {
-                    Text("Spara")
+                HStack{
+                    Button("Spara") {
+                        addActivityToFirestore(selectedDay: selectedDay, title: title, time: time, location: location)
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                    Spacer()
+                    Button("Stäng") {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
                 }
-                
             }
         }
     }
@@ -55,7 +63,6 @@ struct AddAndEditActivityView: View {
         let activity = Activity(title: title, time: time, location: location)
         //let day = Day()
         let schedule = Schedule()
-        schedule.monday.activities.append(activity)
         
         switch selectedDay {
         case "Måndag":
@@ -77,7 +84,7 @@ struct AddAndEditActivityView: View {
         }
         
         do {
-            try db.collection("schedule").addDocument(from: schedule)
+            try db.collection("schedule").document("nJlDJyzztv6FimX6ijmp").setData(from: schedule)
         } catch {
             print("error")
         }

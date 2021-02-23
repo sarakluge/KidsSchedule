@@ -24,8 +24,10 @@ struct ContentView: View {
                 DayView(dayName: "Fredag", listOfActivities: currentSchedule.friday.activities)
                 DayView(dayName: "Lördag", listOfActivities: currentSchedule.saturday.activities)
                 DayView(dayName: "Söndag", listOfActivities: currentSchedule.sunday.activities)
-                
-            }.navigationBarTitle(currentSchedule.scheduleTitel)
+            }.onAppear() {
+                loadScheduleFromFirestore()
+            }
+            .navigationBarTitle(currentSchedule.scheduleTitel)
             .navigationBarItems(trailing: Button(action: {
                 print("save activity")
                 showingAddActivitySheet = true
@@ -33,13 +35,14 @@ struct ContentView: View {
                 Image(systemName: "plus")
             })
             .sheet(isPresented: $showingAddActivitySheet){
-                AddActivitySheet()
+                AddActivitySheet(currentSchedule: currentSchedule)
             }
         }
     }
-  
+    
+    
     func loadScheduleFromFirestore() {
-        db.collection("schedule").addSnapshotListener { (snapshot, err) in
+       db.collection("schedule").addSnapshotListener { (snapshot, err) in
             if let err = err{
                 print("error getting document \(err)")
             } else {
@@ -51,7 +54,8 @@ struct ContentView: View {
                     switch result {
                     case .success(let schedule):
                         if let schedule = schedule {
-                            print("\(schedule)")
+                            self.currentSchedule = schedule
+                            print("\(schedule.monday.activities[0])")
                         } else {
                             print("document does not exist")
                         }
@@ -62,7 +66,6 @@ struct ContentView: View {
             }
         }
     }
-    
 }
     
     
@@ -103,8 +106,9 @@ struct ContentView_Previews: PreviewProvider {
 
 struct DayView: View {
     var dayName: String
-    var listOfActivities: [Activity]
-    
+    @State var listOfActivities: [Activity]
+    //@State var isEditable = false
+    var db = Firestore.firestore()
     
     var body: some View {
         VStack{
@@ -120,98 +124,14 @@ struct DayView: View {
                     Text(activity.title)
             
                 }
+                //.onMove(perform: move)
             }
         }
     }
     
+    
+    func move(from source: IndexSet, to destination: Int) {
+        listOfActivities.move(fromOffsets: source, toOffset: destination)
+    }
 }
 
-struct AddActivitySheet: View {
-    
-    var listOfDays = ["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag"]
-    @State var selectedDay = "Måndag"
-    @State var title = ""
-    @State var time = ""
-    @State var location = ""
-    var db = Firestore.firestore()
-    @Environment(\.presentationMode) var presentationMode
-    
-    var body: some View {
-        NavigationView{
-            Form{
-                Picker(selection: $selectedDay, label: Text("Dag")){
-                    ForEach(listOfDays, id: \.self) { day in
-                        Text(day)
-                    }
-                }
-                HStack{
-                    Text("Titel: ")
-                    TextField("Titel", text: $title)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-                HStack{
-                    Image(systemName: "clock")
-                    Text("Tid: ")
-                    TextField("Tid", text: $time)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-                HStack{
-                    Image(systemName: "mappin.and.ellipse")
-                    Text("Plats: ")
-                    TextField("Plats", text: $location)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-                HStack{
-                    Button("Spara") {
-                        addActivityToFirestore(selectedDay: selectedDay, title: title, time: time, location: location)
-                        self.presentationMode.wrappedValue.dismiss()
-                    }
-                    Spacer()
-                    Button("Stäng") {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }
-                }
-            }
-        }
-    }
-    
-    func addActivityToFirestore(selectedDay: String, title: String, time: String, location: String) {
-        let activity = Activity(title: title, time: time, location: location)
-        //let day = Day()
-        let schedule = Schedule()
-        
-        switch selectedDay {
-        case "Måndag":
-            schedule.monday.activities.append(activity)
-        case "Tisdag":
-            schedule.tuesday.activities.append(activity)
-        case "Onsdag":
-            schedule.wednesday.activities.append(activity)
-        case "Torsdag":
-            schedule.thursday.activities.append(activity)
-        case "Fredag":
-            schedule.friday.activities.append(activity)
-        case "Lördag":
-            schedule.saturday.activities.append(activity)
-        case "Söndag":
-            schedule.sunday.activities.append(activity)
-        default :
-            print("defualt")
-        }
-        
-        do {
-            try db.collection("schedule").addDocument(from: schedule)
-        } catch {
-            print("error")
-        }
-        
-        /*do {
-            try db.collection("activity").addDocument(from: activity)
-        } catch {
-            print("error saving activity to DB")
-        }*/
-    }
-        
-    
-    
-}
