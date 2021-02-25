@@ -10,8 +10,10 @@ import FirebaseFirestoreSwift
 import SwiftUI
 
 class Schedule: Identifiable, Codable {
+    
     @DocumentID var docId : String?
     var id = UUID()
+    var userId: String?
     var scheduleTitel = "Vecka"
     var monday = Day()
     var tuesday = Day()

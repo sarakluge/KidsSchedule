@@ -10,6 +10,7 @@ import SwiftUI
 import FirebaseFirestoreSwift
 
 struct Activity: Identifiable, Codable{
+    @DocumentID var docId: String?
     var id = UUID()
     var title: String
     var time: String

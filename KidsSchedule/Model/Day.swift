@@ -16,7 +16,7 @@ class Day: Identifiable, Codable {
 
     
     
-    init() {
+   /* init() {
         addMockData()
     }
     
@@ -26,5 +26,6 @@ class Day: Identifiable, Codable {
         activities.append(Activity(title: "Läsläxa", time: "18.00-18:30", location: "Hemma"))
             
     }
+ */
 
 }

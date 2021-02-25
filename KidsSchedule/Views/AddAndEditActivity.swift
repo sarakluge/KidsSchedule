@@ -61,8 +61,7 @@ struct AddActivitySheet: View {
     
     func addActivityToFirestore(selectedDay: String, title: String, time: String, location: String) {
         let activity = Activity(title: title, time: time, location: location)
-        //let day = Day()
-        let schedule = Schedule()
+        let schedule = currentSchedule
         
         switch selectedDay {
         case "Måndag":
@@ -84,7 +83,11 @@ struct AddActivitySheet: View {
         }
         
         do {
-            try db.collection("schedule").document("nJlDJyzztv6FimX6ijmp").setData(from: schedule)
+            if currentSchedule.docId == nil {
+                try db.collection("schedule2").addDocument(from: schedule)
+            } else {
+                try db.collection("schedule2").document(currentSchedule.docId!).setData(from: schedule)
+            }
         } catch {
             print("error")
         }

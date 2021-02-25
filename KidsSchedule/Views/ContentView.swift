@@ -13,36 +13,308 @@ struct ContentView: View {
     @State var currentSchedule = Schedule()
     @State var showingAddActivitySheet = false
     
+    
     var body: some View {
         
         NavigationView{
+            ZStack{
+                Color(red: 43.0/256 , green: 42.0/256, blue: 43.0/256)
+                
             HStack{
-                DayView(dayName: "Måndag", listOfActivities: currentSchedule.monday.activities)
+               /* DayView(dayName: "Måndag", listOfActivities: currentSchedule.monday.activities)
                 DayView(dayName: "Tisdag", listOfActivities: currentSchedule.tuesday.activities)
                 DayView(dayName: "Onsdag", listOfActivities: currentSchedule.wednesday.activities)
                 DayView(dayName: "Torsdag", listOfActivities: currentSchedule.thursday.activities)
                 DayView(dayName: "Fredag", listOfActivities: currentSchedule.friday.activities)
                 DayView(dayName: "Lördag", listOfActivities: currentSchedule.saturday.activities)
-                DayView(dayName: "Söndag", listOfActivities: currentSchedule.sunday.activities)
+                DayView(dayName: "Söndag", listOfActivities: currentSchedule.sunday.activities)*/
+                VStack{
+                    ZStack{
+                        Rectangle()
+                            .fill(Color.green)
+                            .frame(width:100, height: 50, alignment: .center)
+                            .padding(.bottom, -4.0)
+                        Text("Måndag")
+                            .bold()
+                    }
+                    List(){
+                        
+                        ForEach(currentSchedule.monday.activities){activity in
+                            Text(activity.title)
+                        }
+                        .onDelete(perform: { indexSet in
+                            
+                            for index in indexSet {
+                                currentSchedule.monday.activities.remove(atOffsets: indexSet)
+                                do {
+                                    try db.collection("schedule2").document(currentSchedule.docId!).setData(from: currentSchedule)
+                                    
+                                } catch {
+                                    print("error")
+                                }
+                            }
+                        })
+                        
+                        .onMove { (indexSet, index) in
+                            self.currentSchedule.monday.activities.move(fromOffsets: indexSet, toOffset: index)
+                            do {
+                                try db.collection("schedule2").document(currentSchedule.docId!).setData(from: currentSchedule)
+                                
+                            } catch {
+                                print("error")
+                            }
+                        }
+                    }
+                }
+                VStack{
+                    ZStack{
+                        Rectangle()
+                            .fill(Color.blue)
+                            .frame(width:100, height: 50, alignment: .center)
+                            .padding(.bottom, -4.0)
+                        Text("Tisdag")
+                            .bold()
+                    }
+                    List(){
+                        ForEach(currentSchedule.tuesday.activities){activity in
+                            Text(activity.title)
+                    
+                        }
+                        .onDelete(perform: { indexSet in
+                            
+                            for index in indexSet {
+                                currentSchedule.tuesday.activities.remove(atOffsets: indexSet)
+                                do {
+                                    try db.collection("schedule2").document(currentSchedule.docId!).setData(from: currentSchedule)
+                                    
+                                } catch {
+                                    print("error")
+                                }
+                            }
+                        })
+                        
+                        .onMove { (indexSet, index) in
+                            self.currentSchedule.tuesday.activities.move(fromOffsets: indexSet, toOffset: index)
+                            do {
+                                try db.collection("schedule2").document(currentSchedule.docId!).setData(from: currentSchedule)
+                                
+                            } catch {
+                                print("error")
+                            }
+                        }
+                    }
+                }
+                VStack{
+                    ZStack{
+                        Rectangle()
+                            .fill(Color.white)
+                            .frame(width:100, height: 50, alignment: .center)
+                            .padding(.bottom, -4.0)
+                        Text("Onsdag")
+                            .bold()
+                    }
+                    List(){
+                        ForEach(currentSchedule.wednesday.activities){activity in
+                            Text(activity.title)
+                    
+                        }
+                        .onDelete(perform: { indexSet in
+                            
+                            for index in indexSet {
+                                currentSchedule.wednesday.activities.remove(atOffsets: indexSet)
+                                do {
+                                    try db.collection("schedule2").document(currentSchedule.docId!).setData(from: currentSchedule)
+                                    
+                                } catch {
+                                    print("error")
+                                }
+                            }
+                        })
+                        
+                        .onMove { (indexSet, index) in
+                            self.currentSchedule.wednesday.activities.move(fromOffsets: indexSet, toOffset: index)
+                            do {
+                                try db.collection("schedule2").document(currentSchedule.docId!).setData(from: currentSchedule)
+                                
+                            } catch {
+                                print("error")
+                            }
+                        }
+                    }
+                }
+                VStack{
+                    ZStack{
+                        Rectangle()
+                            .fill(Color(red: 94.0/256 , green: 66.0/256, blue: 49.0/256))
+                            .frame(width:100, height: 50, alignment: .center)
+                            .padding(.bottom, -4.0)
+                        Text("Torsdag")
+                            .bold()
+                    }
+                    List(){
+                        ForEach(currentSchedule.thursday.activities){activity in
+                            Text(activity.title)
+                    
+                        }
+                        .onDelete(perform: { indexSet in
+                            
+                            for index in indexSet {
+                                currentSchedule.thursday.activities.remove(atOffsets: indexSet)
+                                do {
+                                    try db.collection("schedule2").document(currentSchedule.docId!).setData(from: currentSchedule)
+                                    
+                                } catch {
+                                    print("error")
+                                }
+                            }
+                        })
+                        
+                        .onMove { (indexSet, index) in
+                            self.currentSchedule.thursday.activities.move(fromOffsets: indexSet, toOffset: index)
+                            do {
+                                try db.collection("schedule2").document(currentSchedule.docId!).setData(from: currentSchedule)
+                                
+                            } catch {
+                                print("error")
+                            }
+                        }
+                    }
+                }
+                VStack{
+                    ZStack{
+                        Rectangle()
+                            .fill(Color(red: 255.0/256 , green: 250.0/256, blue: 92.0/256))
+                            .frame(width:100, height: 50, alignment: .center)
+                            .padding(.bottom, -4.0)
+                        Text("Fredag")
+                            .bold()
+                    }
+                    List(){
+                        ForEach(currentSchedule.friday.activities){activity in
+                            Text(activity.title)
+                    
+                        }
+                        .onDelete(perform: { indexSet in
+                            
+                            for index in indexSet {
+                                currentSchedule.friday.activities.remove(atOffsets: indexSet)
+                                do {
+                                    try db.collection("schedule2").document(currentSchedule.docId!).setData(from: currentSchedule)
+                                    
+                                } catch {
+                                    print("error")
+                                }
+                            }
+                        })
+                        
+                        .onMove { (indexSet, index) in
+                            self.currentSchedule.friday.activities.move(fromOffsets: indexSet, toOffset: index)
+                            do {
+                                try db.collection("schedule2").document(currentSchedule.docId!).setData(from: currentSchedule)
+                                
+                            } catch {
+                                print("error")
+                            }
+                        }
+                    }
+                }
+                VStack{
+                    ZStack{
+                        Rectangle()
+                            .fill(Color(red: 255.0/256 , green: 99.0/256, blue: 190.0/256))
+                            .frame(width:100, height: 50, alignment: .center)
+                            .padding(.bottom, -4.0)
+                        Text("Lördag")
+                            .bold()
+                    }
+                    List(){
+                        ForEach(currentSchedule.saturday.activities){activity in
+                            Text(activity.title)
+                    
+                        }
+                        .onDelete(perform: { indexSet in
+                            
+                            for index in indexSet {
+                                currentSchedule.saturday.activities.remove(atOffsets: indexSet)
+                                do {
+                                    try db.collection("schedule2").document(currentSchedule.docId!).setData(from: currentSchedule)
+                                    
+                                } catch {
+                                    print("error")
+                                }
+                            }
+                        })
+                        
+                        .onMove { (indexSet, index) in
+                            self.currentSchedule.saturday.activities.move(fromOffsets: indexSet, toOffset: index)
+                            do {
+                                try db.collection("schedule2").document(currentSchedule.docId!).setData(from: currentSchedule)
+                                
+                            } catch {
+                                print("error")
+                            }
+                        }
+                    }
+                }
+                VStack{
+                    ZStack{
+                        Rectangle()
+                            .fill(Color.red)
+                            .frame(width:100, height: 50, alignment: .center)
+                            .padding(.bottom, -4.0)
+                        Text("Söndag")
+                            .bold()
+                    }
+                    List(){
+                        ForEach(currentSchedule.sunday.activities){activity in
+                            Text(activity.title)
+                    
+                        }
+                        .onDelete(perform: { indexSet in
+                            
+                            for index in indexSet {
+                                currentSchedule.sunday.activities.remove(atOffsets: indexSet)
+                                do {
+                                    try db.collection("schedule2").document(currentSchedule.docId!).setData(from: currentSchedule)
+                                    
+                                } catch {
+                                    print("error")
+                                }
+                            }
+                        })
+                        
+                        .onMove { (indexSet, index) in
+                            self.currentSchedule.sunday.activities.move(fromOffsets: indexSet, toOffset: index)
+                            do {
+                                try db.collection("schedule2").document(currentSchedule.docId!).setData(from: currentSchedule)
+                                
+                            } catch {
+                                print("error")
+                            }
+                        }
+                    }
+                }
             }.onAppear() {
                 loadScheduleFromFirestore()
             }
             .navigationBarTitle(currentSchedule.scheduleTitel)
-            .navigationBarItems(trailing: Button(action: {
-                print("save activity")
-                showingAddActivitySheet = true
-            }) {
-                Image(systemName: "plus")
-            })
+            .navigationBarItems(leading: EditButton(),
+                                trailing: Button(action: {
+                                    print("save activity")
+                                    showingAddActivitySheet = true
+                                }) {
+                                    Image(systemName: "plus")
+                                })
             .sheet(isPresented: $showingAddActivitySheet){
                 AddActivitySheet(currentSchedule: currentSchedule)
             }
+        }
         }
     }
     
     
     func loadScheduleFromFirestore() {
-       db.collection("schedule").addSnapshotListener { (snapshot, err) in
+       db.collection("schedule2").addSnapshotListener { (snapshot, err) in
             if let err = err{
                 print("error getting document \(err)")
             } else {
@@ -55,7 +327,6 @@ struct ContentView: View {
                     case .success(let schedule):
                         if let schedule = schedule {
                             self.currentSchedule = schedule
-                            print("\(schedule.monday.activities[0])")
                         } else {
                             print("document does not exist")
                         }
@@ -67,40 +338,10 @@ struct ContentView: View {
         }
     }
 }
-    
-    
-    
-    
-   /* func getColor(dayName: String) {
-        switch dayName {
-        case "Måndag":
-            print("green")
-        case "Tisdag":
-            print("blue")
-        case "Onsdag":
-            print("White")
-        case "Torsdag":
-            print("brown")
-        case "Fredag":
-            print("Yellow")
-        case "Lördag":
-            print("Pink")
-        case "Söndag":
-            print("red")
-        default :
-            print("defualt")
-            
-        }
-    }*/
-
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().previewLayout(.fixed(width: 896, height: 414))
-            
-            
     }
 }
 
@@ -124,14 +365,8 @@ struct DayView: View {
                     Text(activity.title)
             
                 }
-                //.onMove(perform: move)
             }
         }
-    }
-    
-    
-    func move(from source: IndexSet, to destination: Int) {
-        listOfActivities.move(fromOffsets: source, toOffset: destination)
     }
 }
 
