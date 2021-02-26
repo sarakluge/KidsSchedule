@@ -14,7 +14,7 @@ class Schedule: Identifiable, Codable {
     @DocumentID var docId : String?
     var id = UUID()
     var userId: String?
-    var scheduleTitel = "Vecka"
+    var scheduleTitel = "Veckoschema"
     var monday = Day()
     var tuesday = Day()
     var wednesday = Day()

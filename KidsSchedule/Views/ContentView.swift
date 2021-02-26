@@ -13,7 +13,6 @@ struct ContentView: View {
     @State var currentSchedule = Schedule()
     @State var showingAddActivitySheet = false
     
-    
     var body: some View {
         
         NavigationView{
@@ -37,13 +36,12 @@ struct ContentView: View {
                         Text("Måndag")
                             .bold()
                     }
+                
                     List(){
-                        
                         ForEach(currentSchedule.monday.activities){activity in
-                            Text(activity.title)
+                                Text(activity.title)
                         }
                         .onDelete(perform: { indexSet in
-                            
                             for index in indexSet {
                                 currentSchedule.monday.activities.remove(atOffsets: indexSet)
                                 do {
@@ -296,6 +294,7 @@ struct ContentView: View {
                 }
             }.onAppear() {
                 loadScheduleFromFirestore()
+                anonymousAuth()
             }
             .navigationBarTitle(currentSchedule.scheduleTitel)
             .navigationBarItems(leading: EditButton(),
@@ -312,9 +311,25 @@ struct ContentView: View {
         }
     }
     
+    func anonymousAuth() {
+        Auth.auth().signInAnonymously() { (authResult, error) in
+          if let authResult = error {
+                print("Error occurred while logging in")
+            } else {
+                guard let user = authResult?.user else { return }
+                let isAnonymous = user.isAnonymous  // true
+                let uid = user.uid
+            }
+        }
+    }
+    
     
     func loadScheduleFromFirestore() {
-       db.collection("schedule2").addSnapshotListener { (snapshot, err) in
+        let userId = Auth.auth().currentUser?.uid
+        
+        db.collection("schedule2")
+            .whereField("userId", isEqualTo: userId)
+            .addSnapshotListener { (snapshot, err) in
             if let err = err{
                 print("error getting document \(err)")
             } else {

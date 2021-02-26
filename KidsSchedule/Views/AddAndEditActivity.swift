@@ -49,11 +49,14 @@ struct AddActivitySheet: View {
                     Button("Spara") {
                         addActivityToFirestore(selectedDay: selectedDay, title: title, time: time, location: location)
                         self.presentationMode.wrappedValue.dismiss()
-                    }
+                    }.buttonStyle(PlainButtonStyle())
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                     Spacer()
-                    Button("Stäng") {
+                    Button("Stäng"){
                         self.presentationMode.wrappedValue.dismiss()
-                    }
+                    }.buttonStyle(PlainButtonStyle())
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    
                 }
             }
         }
@@ -61,7 +64,9 @@ struct AddActivitySheet: View {
     
     func addActivityToFirestore(selectedDay: String, title: String, time: String, location: String) {
         let activity = Activity(title: title, time: time, location: location)
+        let userId = Auth.auth().currentUser?.uid
         let schedule = currentSchedule
+        schedule.userId = userId
         
         switch selectedDay {
         case "Måndag":
