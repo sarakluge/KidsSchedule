@@ -12,9 +12,8 @@ import FirebaseFirestoreSwift
 struct Activity: Identifiable, Codable{
     @DocumentID var docId: String?
     var id = UUID()
-    var title: String
-    var time: String
-    var location: String
-    //var imageName: String
-    //var image: Image {Image(imageName)}
+    var title: String?
+    var time: String?
+    var location: String?
+    var imageName: String
 }

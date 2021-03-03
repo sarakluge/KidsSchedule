@@ -8,10 +8,13 @@
 import Foundation
 import SwiftUI
 import Firebase
+import FirebaseStorage
 
 struct AddActivitySheet: View {
     
     var listOfDays = ["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag"]
+    var listOfImage = ["book", "school", "basketball", "bike", "calculator", "carts", "cinema", "dance", "forest", "friends", "friendship", "gamecontroller", "gift", "hockey", "home", "ipad", "iphone", "museum", "notebook", "papercrafts", "pencils", "soccer", "sports", "swim", "test", "theater", "tv"]
+    @State var selectedImage = ""
     @State var selectedDay = "Måndag"
     @State var title = ""
     @State var time = ""
@@ -23,6 +26,15 @@ struct AddActivitySheet: View {
     var body: some View {
         NavigationView{
             Form{
+                Picker(selection: $selectedImage, label: Text("Välj en bild")){
+                    ForEach(listOfImage, id: \.self) { image in
+                        Image( "\(image)")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .aspectRatio(contentMode: .fit)
+                    }
+                }
                 Picker(selection: $selectedDay, label: Text("Dag")){
                     ForEach(listOfDays, id: \.self) { day in
                         Text(day)
@@ -52,7 +64,7 @@ struct AddActivitySheet: View {
                     }.buttonStyle(PlainButtonStyle())
                     .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                     Spacer()
-                    Button("Stäng"){
+                    Button("Ångra"){
                         self.presentationMode.wrappedValue.dismiss()
                     }.buttonStyle(PlainButtonStyle())
                     .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
@@ -63,7 +75,7 @@ struct AddActivitySheet: View {
     }
     
     func addActivityToFirestore(selectedDay: String, title: String, time: String, location: String) {
-        let activity = Activity(title: title, time: time, location: location)
+        let activity = Activity(title: title, time: time, location: location, imageName: selectedImage)
         let userId = Auth.auth().currentUser?.uid
         let schedule = currentSchedule
         schedule.userId = userId
@@ -87,23 +99,17 @@ struct AddActivitySheet: View {
             print("defualt")
         }
         
+        
         do {
             if currentSchedule.docId == nil {
-                try db.collection("schedule2").addDocument(from: schedule)
+                try db.collection("schedule3").addDocument(from: schedule)
             } else {
-                try db.collection("schedule2").document(currentSchedule.docId!).setData(from: schedule)
+                if let currentScheduleDocId = currentSchedule.docId{
+                    try db.collection("schedule3").document(currentScheduleDocId).setData(from: schedule)
+                }
             }
         } catch {
             print("error")
         }
-        
-        /*do {
-            try db.collection("activity").addDocument(from: activity)
-        } catch {
-            print("error saving activity to DB")
-        }*/
     }
-        
-    
-    
 }
